@@ -23,15 +23,16 @@ class StoriesData {
 
   List<Stories> parseStoriesPreview(var stories) {
     List<Stories> storyWidgets = [];
-    for (QueryDocumentSnapshot story in stories) {
+    for (QueryDocumentSnapshot <Map<String,dynamic>> story in  stories ) {
+
       final Stories storyData = Stories.fromJson({
         'storyId': story.id,
         'date':
-            DateTime.fromMillisecondsSinceEpoch(story.data()!['date'].seconds)
+            DateTime.fromMillisecondsSinceEpoch(story.data()['date'].seconds)
                 .toIso8601String(),
-        'file': jsonDecode(jsonEncode(story.data()!['file'])),
-        'previewImage': story.data()!['previewImage'],
-        'previewTitle': jsonDecode(jsonEncode(story.data()!['previewTitle'])),
+        'file': jsonDecode(jsonEncode(story.data()['file'])),
+        'previewImage': story.data()['previewImage'],
+        'previewTitle': jsonDecode(jsonEncode(story.data()['previewTitle'])),
       });
       if (storyData.file != null) {
         storyWidgets.add(storyData);
