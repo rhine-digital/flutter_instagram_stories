@@ -126,6 +126,7 @@ class _FlutterInstagramStoriesState extends State<FlutterInstagramStories> {
             .snapshots(),
         builder: (context, snapshot) {
           if (!snapshot.hasData) {
+            print(snapshot.hasData);
             return ListView.builder(
               scrollDirection: Axis.horizontal,
               primary: false,
@@ -176,12 +177,6 @@ class _FlutterInstagramStoriesState extends State<FlutterInstagramStories> {
                 return Padding(
                   padding: EdgeInsets.only(left: 15.0, top: 8.0, bottom: 16.0),
                   child: InkWell(
-                    child: DottedBorder(
-                      color: widget.lastIconHighlightColor,
-                      dashPattern: [8, 4],
-                      strokeWidth: 2,
-                      borderType: BorderType.RRect,
-                      radius: widget.lastIconHighlightRadius,
                       child: Padding(
                         padding: const EdgeInsets.all(2.0),
                         child: Container(
@@ -226,7 +221,7 @@ class _FlutterInstagramStoriesState extends State<FlutterInstagramStories> {
                             ),
                           ]),
                         ),
-                      ),
+                    
                     ),
                     onTap: () async {
                       _backStateAdditional = true;
