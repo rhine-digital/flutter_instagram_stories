@@ -325,7 +325,7 @@ class StoryViewState extends State<StoryView> with TickerProviderStateMixin {
   StreamSubscription<PlaybackState>? playbackSubscription;
 
   StoryItem? get lastShowing =>
-      widget.storyItems.firstWhere((it) => !it!.shown, orElse: () => null);
+      widget.storyItems.firstWhere((it) => !it!.shown, orElse: null);
 
   @override
   void initState() {

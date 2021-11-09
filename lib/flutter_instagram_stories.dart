@@ -11,7 +11,6 @@ import 'grouped_stories_view.dart';
 
 export 'grouped_stories_view.dart';
 
-import 'package:dotted_border/dotted_border.dart';
 
 class FlutterInstagramStories extends StatefulWidget {
   /// the name of the collection in Firestore, more info here https://github.com/awaik/flutter_instagram_stories
